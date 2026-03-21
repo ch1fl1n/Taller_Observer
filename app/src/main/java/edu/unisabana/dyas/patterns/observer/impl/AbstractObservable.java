@@ -1,30 +1,30 @@
 package edu.unisabana.dyas.patterns.observer.impl;
 
+import edu.unisabana.dyas.patterns.observer.IObservable;
+import edu.unisabana.dyas.patterns.observer.IObserver;
+
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author cesarvefe
- 
- */
+/*Clase abstracta que implementa la gestión de observers*/
 public abstract class AbstractObservable implements IObservable {
-
-    private final List<IObserver> observers = new ArrayList<>();
-
+    
+    private List<IObserver> observers = new ArrayList<>();
+    
     @Override
     public void addObserver(IObserver observer) {
-        this.observers.add(observer);
+        observers.add(observer);
     }
-
+    
     @Override
     public void removeObserver(IObserver observer) {
-        this.observers.remove(observer);
+        observers.remove(observer);
     }
-
+    
     @Override
-    public void notifyAllObservers(String command, Object source) {
+    public void notifyAllObservers(String property, Object source) {
         for (IObserver observer : observers) {
-            observer.notifyObserver(command, source);
+            observer.notifyChange(property, source);
         }
     }
 }
