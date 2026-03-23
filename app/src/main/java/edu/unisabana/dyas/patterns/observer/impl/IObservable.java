@@ -1,8 +1,14 @@
-package edu.unisabana.dyas.patterns.observer;
+package edu.unisabana.dyas.patterns.observer.impl;
 
-/*Interfaz para el sujeto observable*/
+/**
+ * @author cesarvefe
+ 
+ */
 public interface IObservable {
-    void addObserver(IObserver observer);
-    void removeObserver(IObserver observer);
-    void notifyAllObservers(String property, Object source);
+
+    public void addObserver(IObserver observer);
+
+    public void removeObserver(IObserver observer);
+
+    public void notifyAllObservers(String command, Object source);
 }

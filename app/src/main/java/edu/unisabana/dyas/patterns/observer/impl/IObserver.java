@@ -1,6 +1,10 @@
-package edu.unisabana.dyas.patterns.observer;
+package edu.unisabana.dyas.patterns.observer.impl;
 
-/*Interfaz para los observadores*/
+/**
+ * @author cesarvefe
+ 
+ */
 public interface IObserver {
-    void notifyChange(String property, Object source);
+    
+    public void notifyObserver(String command, Object source);
 }
